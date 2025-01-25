@@ -44,3 +44,19 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *evt)
     isdown = false;
 }
 
+
+void MainWindow::on_closeBtn_clicked()
+{
+    close();
+}
+
+void MainWindow::on_maxWinBtn_clicked()
+{
+    if(isMaximized()){
+
+        showNormal();
+    }else{
+        showMaximized();
+    }
+}
+

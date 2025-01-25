@@ -27,6 +27,10 @@ protected:
     void mouseMoveEvent(QMouseEvent *evt);
     void mouseReleaseEvent(QMouseEvent *evt);
 
+private slots:
+    void on_closeBtn_clicked();
+    void on_maxWinBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     bool isdown = false;
