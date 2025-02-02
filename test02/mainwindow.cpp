@@ -3,6 +3,8 @@
 #include <QMouseEvent>
 #include <QDebug>
 #include <QGraphicsDropShadowEffect>
+#include <QFileDialog>
+#include <QFile>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -53,10 +55,47 @@ void MainWindow::on_closeBtn_clicked()
 void MainWindow::on_maxWinBtn_clicked()
 {
     if(isMaximized()){
-
         showNormal();
     }else{
         showMaximized();
     }
+}
+
+
+void MainWindow::on_toolButton_clicked()
+{
+    QString path = QFileDialog::getExistingDirectory(this, "sss", ".");
+    QStringList files = getFiles(path);
+    for (int i = 0; i < files.count(); ++i) {
+        QString fileStr = files.at(i);
+        // 读取文件
+        QFile qfile(fileStr);
+        if(qfile.open(QIODevice::ReadOnly)){
+            QByteArray qbyteArr = qfile.readLine();
+
+
+            std::string a = qbyteArr.toStdString();
+
+            qfile.close();
+        }
+    }
+}
+
+QStringList MainWindow::getFiles(const QString &path)
+{
+    QStringList rest;
+    QDir dir(path);
+    QFileInfoList infolist = dir.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
+    for (int i = 0; i < infolist.count(); ++i) {
+        QFileInfo info = infolist.at(i);
+        if(info.isDir()){
+            QString suDir = info.absoluteFilePath();
+            QStringList files = getFiles(suDir);
+            rest.append(files);
+        }else{
+            rest.append(info.absoluteFilePath());
+        }
+    }
+    return rest;
 }
 
