@@ -18,19 +18,25 @@ public:
     ~MainWindow();
 
 
-
-
 protected:
-    // 重写鼠标按下事件
-    // 重写鼠标移动事件
     void mousePressEvent(QMouseEvent *evt);
     void mouseMoveEvent(QMouseEvent *evt);
     void mouseReleaseEvent(QMouseEvent *evt);
+
+private slots:
+    void on_closeBtn_clicked();
+    void on_maxWinBtn_clicked();
+    void on_toolButton_clicked();
 
 private:
     Ui::MainWindow *ui;
     bool isdown = false;
     QPoint mOffset;
+
+    QStringList getFiles(const QString &path);
+
+
+
 
 };
 #endif // MAINWINDOW_H

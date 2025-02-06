@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/img">
         <file>icon.png</file>
+        <file>max.png</file>
+        <file>min.png</file>
     </qresource>
 </RCC>
