@@ -34,9 +34,5 @@ private:
     QPoint mOffset;
 
     QStringList getFiles(const QString &path);
-
-
-
-
 };
 #endif // MAINWINDOW_H

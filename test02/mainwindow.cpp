@@ -5,6 +5,7 @@
 #include <QGraphicsDropShadowEffect>
 #include <QFileDialog>
 #include <QFile>
+#include <QStandardItemModel>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -14,12 +15,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinMaxButtonsHint);
     //设置主窗口透明
     this->setAttribute(Qt::WA_TranslucentBackground);
-
     QGraphicsDropShadowEffect* shadow = new QGraphicsDropShadowEffect();
     shadow->setBlurRadius(10);
     shadow->setColor(Qt::black);
     shadow->setOffset(0);
     ui->widget->setGraphicsEffect(shadow);
+
+
+    QHeaderView headerView(Qt::Horizontal);
+
+    QStringList table_h_headers;
+    for(int i = 0; i< 10; i++){
+        table_h_headers.append("sssssssssss");
+    }
+
+    ui->tableView->setHorizontalHeader(table_h_headers);
+
 }
 
 MainWindow::~MainWindow()

@@ -6,7 +6,7 @@
 #include <QHostAddress>
 #include <QHostInfo>
 #include <QNetworkInterface>
-
+#include <QListWidgetItem>
 
 Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
 {
@@ -21,8 +21,16 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
         }
     }
     ui->portEdit->setText("8090");
-
+    QIntValidator *validator = new QIntValidator(0, 65535, this);
+    ui->portEdit->setValidator(validator);
     tcpServer = new TcpServer;
+
+
+
+    for(int i=0;i< 100;i++){
+        ui->userlist->addItem("ssssss");
+    }
+
 
 
 }
@@ -40,7 +48,8 @@ void Widget::on_startBtn_clicked()
         ui->ipEdit->setDisabled(true);
         ui->portEdit->setDisabled(true);
         //===
-        bool isListen = tcpServer->listen(QHostAddress::Any, 12345);
+        quint16 port = ui->portEdit->text().toUShort();
+        bool isListen = tcpServer->listen(QHostAddress::Any, port);
         if(isListen){
             ui->startBtn->setText("关闭");
             ui->startBtn->setDisabled(false);
