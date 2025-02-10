@@ -17,6 +17,13 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+
+private slots:
+    void shapeChanged();
+
+
+
+
 private:
     Ui::Widget *ui;
 };

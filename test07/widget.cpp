@@ -74,5 +74,5 @@ void Widget::shapeChanged()
     int index = ui->cboShape->currentIndex();
     Shape shape = (Shape)ui->cboShape->itemData(index).toInt();
 
-
+    ui->paintWidget->setShape(shape);
 }
