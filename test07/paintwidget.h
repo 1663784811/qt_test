@@ -32,7 +32,19 @@ class PaintWidget : public QWidget
 public:
     explicit PaintWidget(QWidget *parent = nullptr);
 
+
+
+public slots:
+    void setShape(Shape shape);
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 signals:
+
+
+private:
+    Shape mShape;
 };
 
 #endif // PAINTWIDGET_H

@@ -76,7 +76,7 @@ QGroupBox::title{
     </widget>
    </item>
    <item>
-    <widget class="PaintWidget" name="widget_2" native="true">
+    <widget class="PaintWidget" name="paintWidget" native="true">
      <property name="styleSheet">
       <string notr="true">background-color: rgb(255, 255, 255);</string>
      </property>
