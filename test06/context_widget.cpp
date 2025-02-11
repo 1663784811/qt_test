@@ -6,7 +6,6 @@
 
 ContextWidget::ContextWidget(QWidget *parent)    : QWidget{parent}
 {
-
     QVBoxLayout* verticalLayout = new QVBoxLayout(this);
     verticalLayout->setSpacing(0);
     verticalLayout->setContentsMargins(0,0,0,0);
