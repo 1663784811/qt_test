@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
         table_h_headers.append("sssssssssss");
     }
 
-    ui->tableView->setHorizontalHeader(table_h_headers);
+    // ui->tableView->setHorizontalHeader(table_h_headers);
 
 }
 

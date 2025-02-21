@@ -7,6 +7,7 @@
 #include <QHostInfo>
 #include <QNetworkInterface>
 #include <QListWidgetItem>
+#include "useritem.h"
 
 Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
 {
@@ -26,10 +27,23 @@ Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
     tcpServer = new TcpServer;
 
 
+    for(int i=0;i< 10;i++){
+        QListWidgetItem* item = new QListWidgetItem;
 
-    for(int i=0;i< 100;i++){
-        ui->userlist->addItem("ssssss");
+
+
+        UserItem* useritem = new UserItem(this);
+        item->setSizeHint(useritem->sizeHint());
+        ui->userlist->addItem(item);
+        ui->userlist->setItemWidget(item, useritem);
     }
+
+
+
+
+
+
+
 
 
 

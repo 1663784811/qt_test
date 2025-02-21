@@ -9,6 +9,22 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
+
+enum Location{
+    TOP,
+    BOTTOM,
+    LEFT,
+    RIGHT,
+    TOP_LEFT,
+    TOP_RIGHT,
+    BOTTOM_LEFT,
+    BOTTOM_RIGHT,
+    CENTER
+};
+
+
+
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -31,6 +47,10 @@ private:
     Ui::MainWindow *ui;
     bool isdown = false;
     QPoint mOffset;
+    Location location;
+
+
+    void setCursorShape(QPointF& point);
 
 };
 #endif // MAINWINDOW_H

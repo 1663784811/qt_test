@@ -24,6 +24,7 @@ void PaintWidget::paintEvent(QPaintEvent *event)
         QPoint(90,70),
     };
     QPainter painter(this);
+    QRect rectP(points[0], points[2]);
 
     for(int x=0; x < width(); x+= 100){
         for(int y=0; y < height(); y+= 100){
@@ -31,12 +32,19 @@ void PaintWidget::paintEvent(QPaintEvent *event)
             painter.translate(x, y);
 
             switch(mShape){
-            case _Point:
-                painter.drawPoints(points,4);
-                break;
-            case _Line:
-                painter.drawLine(points[0], points[2]);
-                break;
+                case _Point:
+                    painter.drawPoints(points,4);
+                    break;
+                case _Line:
+                    painter.drawLine(points[0], points[2]);
+                    break;
+                case _Rect:
+                    painter.drawRect(rectP);
+                    break;
+                case _RoundedRect:
+                    painter.drawLine(points[0], points[2]);
+                    break;
+
             }
             painter.restore();
         }

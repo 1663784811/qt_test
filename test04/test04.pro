@@ -15,13 +15,16 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     tcpserver.cpp \
+    useritem.cpp \
     widget.cpp
 
 HEADERS += \
     tcpserver.h \
+    useritem.h \
     widget.h
 
 FORMS += \
+    useritem.ui \
     widget.ui
 
 # Default rules for deployment.
