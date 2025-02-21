@@ -22,8 +22,9 @@ private slots:
     void onDisconnected();
 
 private:
-     // 缓存每个客户端的数据
+    // 缓存每个客户端的数据
     QMap<QTcpSocket*, QByteArray> bufferMap;
+    // 处理数据
     void processData(QTcpSocket *clientSocket);
 };
 
