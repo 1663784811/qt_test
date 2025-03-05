@@ -31,6 +31,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // ui->tableView->setHorizontalHeader(table_h_headers);
 
+    // 设置行数和列数
+    ui->tableWidget->setRowCount(3);
+    ui->tableWidget->setColumnCount(3);
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
+
+    ui->tableWidget->setHorizontalHeaderLabels({"序号", "单词", "出现次数"});
+    // 设置单元格内容
+    ui->tableWidget->setItem(0, 0, new QTableWidgetItem("John"));
+    ui->tableWidget->setItem(0, 1, new QTableWidgetItem("25"));
+    ui->tableWidget->setItem(1, 0, new QTableWidgetItem("Alice"));
+    ui->tableWidget->setItem(1, 1, new QTableWidgetItem("30"));
+    ui->tableWidget->setItem(2, 0, new QTableWidgetItem("Bob"));
+    ui->tableWidget->setItem(2, 1, new QTableWidgetItem("22"));
+
+
+
 }
 
 MainWindow::~MainWindow()

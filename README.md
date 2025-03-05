@@ -17,11 +17,20 @@ test04
 
 test05
     tcp 客户端
-    
+   
+test06
+    音乐播放器
+     
+test07
+    视频播放器
+     
+test08
+    ffmpeg视频播放器
+     
 
-
-
-
+test09
+    qml
+     
 
 
 ```
