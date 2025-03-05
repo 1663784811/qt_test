@@ -15,8 +15,8 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::Widget)
 
     for (int i = 0; i < 60; ++i) {
         VdMenuData v;
-        v.setId("sss");
-        v.setName("name");
+        v.id = "ssss";
+        v.name = "name";
         data->append(v);
     }
     menu->setData(data);
