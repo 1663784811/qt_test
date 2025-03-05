@@ -5,7 +5,7 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class Widget;
+class mainWin;
 }
 QT_END_NAMESPACE
 
@@ -18,6 +18,6 @@ public:
     ~Widget();
 
 private:
-    Ui::Widget *ui;
+    Ui::mainWin *ui;
 };
 #endif // WIDGET_H

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QVector>
+#include <QVBoxLayout>
 #include <vd/vdmenudata.h>
 
 class VdMenu : public QWidget
@@ -14,7 +15,7 @@ public:
     void setData(QVector<VdMenuData>* data );
 
 private:
-    void updateData(QVector<VdMenuData> *data); // 更新数据
+    void updateData(QVector<VdMenuData> *data, QVBoxLayout* loayout); // 更新数据
 
 signals:
 

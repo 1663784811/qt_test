@@ -13,8 +13,8 @@ public:
     QString id;
     QString name;
     QString icon;
-    QVector<VdMenuData>* childs;
-
+    QVector<VdMenuData> childs;
+    bool open = false;
 
 private:
 

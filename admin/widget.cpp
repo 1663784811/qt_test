@@ -6,7 +6,7 @@
 #include <vd/vdmenu.h>
 
 
-Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::Widget)
+Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
 {
     ui->setupUi(this);
 
@@ -17,6 +17,16 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::Widget)
         VdMenuData v;
         v.id = "ssss";
         v.name = "name";
+        if(i%5 == 0){
+            QVector<VdMenuData> childs;
+            for(int j=0;j<4;j++){
+                VdMenuData x;
+                x.id = "fff";
+                x.name = "sss";
+                childs.append(x);
+            }
+            v.childs = childs;
+        }
         data->append(v);
     }
     menu->setData(data);

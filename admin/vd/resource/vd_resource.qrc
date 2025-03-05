@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/vd">
+        <file>vd_component.svg</file>
+        <file>vd_status.svg</file>
+    </qresource>
+</RCC>
