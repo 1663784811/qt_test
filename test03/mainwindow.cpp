@@ -18,6 +18,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     shadow->setColor(Qt::black);
     shadow->setOffset(0);
     ui->widget->setGraphicsEffect(shadow);
+
+
+
+
 }
 
 MainWindow::~MainWindow()
@@ -35,7 +39,7 @@ void MainWindow::mousePressEvent(QMouseEvent *evt)
 void MainWindow::mouseMoveEvent(QMouseEvent *evt)
 {
     if(isdown){
-        this->move(evt->globalPosition().toPoint()-mOffset);
+        this->move(evt->globalPosition().toPoint() - mOffset);
     }
 }
 

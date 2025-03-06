@@ -20,7 +20,6 @@ signals:
 
 
 private:
-    QHBoxLayout* qh;
 };
 
 #endif // VDMENUITEM_H

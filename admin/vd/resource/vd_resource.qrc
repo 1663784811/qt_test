@@ -2,5 +2,6 @@
     <qresource prefix="/vd">
         <file>vd_component.svg</file>
         <file>vd_status.svg</file>
+        <file>vd_qss.qss</file>
     </qresource>
 </RCC>

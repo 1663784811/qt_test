@@ -16,6 +16,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
         VdMenuData v;
         v.id = "ssss";
         v.name = "name";
+        v.icon = ":/vd/vd_component.svg";
         if(i%5 == 0){
             QVector<VdMenuData> childs;
             for(int j=0;j<4;j++){

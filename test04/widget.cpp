@@ -7,7 +7,6 @@
 #include <QHostInfo>
 #include <QNetworkInterface>
 #include <QListWidgetItem>
-#include "useritem.h"
 
 Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget)
 {

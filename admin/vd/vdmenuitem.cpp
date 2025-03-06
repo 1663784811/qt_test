@@ -6,14 +6,23 @@
 
 VdMenuItem::VdMenuItem(VdMenuData* menuData, QWidget *parent) : QWidget{parent}
 {
-    qh = new QHBoxLayout(this);
+    QVBoxLayout* vbox = new QVBoxLayout(this);
+    vbox->setContentsMargins(0, 0, 0, 0);
+    vbox->setSpacing(0);
+    QWidget* wt = new QWidget();
+    wt->setObjectName("vdMenuItem");
+    vbox->addWidget(wt);
+    QHBoxLayout* qh = new QHBoxLayout();
+    wt->setLayout(qh);
     // icon
-    QPixmap pixmap(":/vd/vd_component.svg");
     QLabel* icon = new QLabel();
     icon->setScaledContents(true);
     icon->setMaximumHeight(16);
     icon->setMaximumWidth(16);
-    icon->setPixmap(pixmap);
+    if(!menuData->icon.isEmpty()){
+        QPixmap pixmap(menuData->icon);
+        icon->setPixmap(pixmap);
+    }
     qh->addWidget(icon);
     // name
     QLabel* name = new QLabel(menuData->name);

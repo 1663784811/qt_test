@@ -1,0 +1,11 @@
+QWidget {
+
+}
+
+#vdMenuItem{
+    background-color: #ffffff;
+
+}
+#vdMenuItem:hover {
+    background-color: yellow;
+}
