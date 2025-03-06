@@ -17,6 +17,9 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
 
+protected:
+    void selectMenu();
+
 private:
     Ui::mainWin *ui;
 };

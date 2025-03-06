@@ -18,7 +18,7 @@ private:
     void updateData(QVector<VdMenuData> *data, QVBoxLayout* loayout); // 更新数据
 
 signals:
-
+    void selectItem();
 
 
 

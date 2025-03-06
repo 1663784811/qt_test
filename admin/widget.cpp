@@ -12,8 +12,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
 
     VdMenu *menu = new VdMenu();
     QVector<VdMenuData> *data = new QVector<VdMenuData>();
-
-    for (int i = 0; i < 60; ++i) {
+    for (int i = 0; i < 10; ++i) {
         VdMenuData v;
         v.id = "ssss";
         v.name = "name";
@@ -31,9 +30,17 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
     }
     menu->setData(data);
     ui->leftscroll->setWidget(menu);
+    // 接收信号
+    connect(menu, &VdMenu::selectItem, this, &Widget::selectMenu);
+
 }
 
 Widget::~Widget()
 {
     delete ui;
+}
+
+void Widget::selectMenu()
+{
+    qDebug()<< "selectMenu";
 }

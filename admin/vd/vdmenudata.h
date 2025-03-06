@@ -7,8 +7,8 @@
 class VdMenuData
 {
 public:
-    VdMenuData();
-    ~VdMenuData();
+    VdMenuData(){};
+    ~VdMenuData(){};
 
     QString id;
     QString name;

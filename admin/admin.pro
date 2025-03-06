@@ -12,12 +12,13 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     vd/vdmenu.cpp \
-    vd/vdmenudata.cpp \
+    vd/vdmenuitem.cpp \
     widget.cpp
 
 HEADERS += \
     vd/vdmenu.h \
     vd/vdmenudata.h \
+    vd/vdmenuitem.h \
     widget.h
 
 FORMS += \

@@ -15,7 +15,6 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#testBtn{
-	
 	background-color: rgb(170, 0, 0);
 }</string>
   </property>
