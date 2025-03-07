@@ -33,7 +33,6 @@ void VdMenu::updateData(QVector<VdMenuData> *data, QVBoxLayout* loayout)
             connect(item, &VdMenuItem::selectItem, this , [=](QString id){
                 qDebug() << " id= " << id;
             });
-
             if(objData.childs.count() > 0){
                 QVBoxLayout* vbox = new QVBoxLayout();
                 vbox->setContentsMargins(0, 0, 0, 0);

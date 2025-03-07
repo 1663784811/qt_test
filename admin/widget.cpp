@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include <QSpacerItem>
 #include <vd/vdmenu.h>
+#include "widget/testbtnwidget.h"
 
 
 Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
@@ -35,6 +36,10 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
     // 接收信号
     connect(menu, &VdMenu::selectItem, this, &Widget::selectMenu);
 
+
+    TestBtnWidget* btnWidget = new TestBtnWidget();
+
+    ui->stackedWidget->addWidget(btnWidget);
 }
 
 Widget::~Widget()

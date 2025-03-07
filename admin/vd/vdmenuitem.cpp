@@ -37,6 +37,8 @@ VdMenuItem::VdMenuItem(VdMenuData* menuData, QWidget *parent) : QWidget{parent}
         status->setMaximumWidth(16);
         status->setPixmap(QPixmap(":/vd/vd_status.svg"));
         qh->addWidget(status);
+    }else{
+        wt->setCursor(Qt::PointingHandCursor);
     }
 }
 

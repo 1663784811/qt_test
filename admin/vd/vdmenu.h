@@ -4,7 +4,8 @@
 #include <QWidget>
 #include <QVector>
 #include <QVBoxLayout>
-#include <vd/vdmenudata.h>
+#include "vd/vdmenudata.h"
+#include "vd/vdmenuitem.h"
 
 class VdMenu : public QWidget
 {
@@ -19,6 +20,11 @@ private:
 
     QVBoxLayout* vbMenuLayout;
     QSpacerItem* vbLastItem;
+
+    QMap<QString, VdMenuItem> aa; // item
+    QMap<QString, int> animation; // 动画
+    QString action; // 选中
+
 
 
 

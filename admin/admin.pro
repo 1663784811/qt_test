@@ -13,13 +13,15 @@ SOURCES += \
     main.cpp \
     vd/vdmenu.cpp \
     vd/vdmenuitem.cpp \
-    widget.cpp
+    widget.cpp \
+    widget/testbtnwidget.cpp
 
 HEADERS += \
     vd/vdmenu.h \
     vd/vdmenudata.h \
     vd/vdmenuitem.h \
-    widget.h
+    widget.h \
+    widget/testbtnwidget.h
 
 FORMS += \
     widget.ui
