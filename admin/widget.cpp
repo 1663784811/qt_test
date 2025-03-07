@@ -12,7 +12,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
 
     VdMenu *menu = new VdMenu();
     QVector<VdMenuData> *data = new QVector<VdMenuData>();
-    for (int i = 0; i < 10; ++i) {
+    for (int i = 0; i < 5; ++i) {
         VdMenuData v;
         v.id = "ssss";
         v.name = "name";
@@ -29,6 +29,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
         }
         data->append(v);
     }
+    menu->setData(data);
     menu->setData(data);
     ui->leftscroll->setWidget(menu);
     // 接收信号

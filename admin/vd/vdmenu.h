@@ -17,6 +17,11 @@ public:
 private:
     void updateData(QVector<VdMenuData> *data, QVBoxLayout* loayout); // 更新数据
 
+    QVBoxLayout* vbMenuLayout;
+    QSpacerItem* vbLastItem;
+
+
+
 signals:
     void selectItem();
 

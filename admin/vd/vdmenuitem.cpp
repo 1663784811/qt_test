@@ -9,7 +9,7 @@ VdMenuItem::VdMenuItem(VdMenuData* menuData, QWidget *parent) : QWidget{parent}
     QVBoxLayout* vbox = new QVBoxLayout(this);
     vbox->setContentsMargins(0, 0, 0, 0);
     vbox->setSpacing(0);
-    QWidget* wt = new QWidget();
+    QWidget* wt = new QWidget(this);
     wt->setObjectName("vdMenuItem");
     vbox->addWidget(wt);
     QHBoxLayout* qh = new QHBoxLayout();
@@ -20,26 +20,28 @@ VdMenuItem::VdMenuItem(VdMenuData* menuData, QWidget *parent) : QWidget{parent}
     icon->setMaximumHeight(16);
     icon->setMaximumWidth(16);
     if(!menuData->icon.isEmpty()){
-        QPixmap pixmap(menuData->icon);
-        icon->setPixmap(pixmap);
+        icon->setPixmap(QPixmap(menuData->icon));
     }
     qh->addWidget(icon);
     // name
-    QLabel* name = new QLabel(menuData->name);
+    QLabel* name = new QLabel(menuData->name, wt);
     qh->addWidget(name);
     // ====
     QSpacerItem* horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
     qh->addItem(horizontalSpacer);
     if(menuData->childs.count() > 0){
         // open status
-        QPixmap st(":/vd/vd_status.svg");
         QLabel* status = new QLabel();
         status->setScaledContents(true);
         status->setMaximumHeight(16);
         status->setMaximumWidth(16);
-        status->setPixmap(st);
+        status->setPixmap(QPixmap(":/vd/vd_status.svg"));
         qh->addWidget(status);
     }
+}
+
+VdMenuItem::~VdMenuItem()
+{
 }
 
 void VdMenuItem::mousePressEvent(QMouseEvent *event)

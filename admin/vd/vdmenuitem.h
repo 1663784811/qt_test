@@ -11,6 +11,7 @@ class VdMenuItem : public QWidget
     Q_OBJECT
 public:
     explicit VdMenuItem(VdMenuData* menuData, QWidget *parent = nullptr);
+    ~ VdMenuItem();
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
