@@ -9,3 +9,7 @@ QWidget {
 #vdMenuItem:hover {
     background-color: yellow;
 }
+
+#aaa{
+    background-color: #222222;
+}

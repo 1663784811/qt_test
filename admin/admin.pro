@@ -14,6 +14,7 @@ SOURCES += \
     vd/vdmenu.cpp \
     vd/vdmenuitem.cpp \
     widget.cpp \
+    widget/basewidget.cpp \
     widget/testbtnwidget.cpp
 
 HEADERS += \
@@ -21,6 +22,7 @@ HEADERS += \
     vd/vdmenudata.h \
     vd/vdmenuitem.h \
     widget.h \
+    widget/basewidget.h \
     widget/testbtnwidget.h
 
 FORMS += \

@@ -16,7 +16,7 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
     for (int i = 0; i < 5; ++i) {
         VdMenuData v;
         v.id = "ssss";
-        v.name = "name";
+        v.name = "组件";
         v.icon = ":/vd/vd_component.svg";
         if(i%5 == 0){
             QVector<VdMenuData> childs;
@@ -33,13 +33,23 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
     menu->setData(data);
     menu->setData(data);
     ui->leftscroll->setWidget(menu);
+
     // 接收信号
     connect(menu, &VdMenu::selectItem, this, &Widget::selectMenu);
 
 
-    TestBtnWidget* btnWidget = new TestBtnWidget();
 
-    ui->stackedWidget->addWidget(btnWidget);
+
+
+
+    widgetList.insert("btnWidget", new TestBtnWidget());
+
+    int i = 0;
+    foreach (QString key, widgetList.keys()) {
+        ui->stackedWidget->addWidget(widgetList.value(key));
+        widgetIndex.insert(key, i);
+        i++;
+    }
 }
 
 Widget::~Widget()
@@ -50,4 +60,6 @@ Widget::~Widget()
 void Widget::selectMenu()
 {
     qDebug()<< "selectMenu";
+
+
 }
