@@ -5,27 +5,26 @@ Widget::Widget(QWidget *parent): QWidget(parent), ui(new Ui::Widget)
 {
     ui->setupUi(this);
     // ===================
-    ui->cboShape->addItem("Point", static_cast<int>(_Point));
-    ui->cboShape->addItem("Line", static_cast<int>(_Line));
-    ui->cboShape->addItem("Rect", static_cast<int>(_Rect));
-    ui->cboShape->addItem("RoundedRect", static_cast<int>(_RoundedRect));
-    ui->cboShape->addItem("Ellipse", static_cast<int>(_Ellipse));
-    ui->cboShape->addItem("Polyline", static_cast<int>(_Polyline));
-    ui->cboShape->addItem("Polyline", static_cast<int>(_Polyline));
-    ui->cboShape->addItem("Polygon", static_cast<int>(_Polygon));
-    ui->cboShape->addItem("Arc", static_cast<int>(_Arc));
+    ui->cboShape->addItem("Point 点", static_cast<int>(_Point));
+    ui->cboShape->addItem("Line 线", static_cast<int>(_Line));
+    ui->cboShape->addItem("Rect 矩形", static_cast<int>(_Rect));
+    ui->cboShape->addItem("RoundedRect 圆形的矩形", static_cast<int>(_RoundedRect));
+    ui->cboShape->addItem("Ellipse 椭圆", static_cast<int>(_Ellipse));
+    ui->cboShape->addItem("Polyline 多段线", static_cast<int>(_Polyline));
+    ui->cboShape->addItem("Polygon 多边形", static_cast<int>(_Polygon));
+    ui->cboShape->addItem("Arc 弧", static_cast<int>(_Arc));
     ui->cboShape->addItem("Pie", static_cast<int>(_Pie));
-    ui->cboShape->addItem("Chord", static_cast<int>(_Chord));
-    ui->cboShape->addItem("Path", static_cast<int>(_Path));
-    ui->cboShape->addItem("Text", static_cast<int>(_Text));
-    ui->cboShape->addItem("Pixmap", static_cast<int>(_Pixmap));
+    ui->cboShape->addItem("Chord 和弦", static_cast<int>(_Chord));
+    ui->cboShape->addItem("Path 路径", static_cast<int>(_Path));
+    ui->cboShape->addItem("Text 文本", static_cast<int>(_Text));
+    ui->cboShape->addItem("Pixmap 像素图", static_cast<int>(_Pixmap));
     // ===================
 
     // 宽度
     ui->sbPenWidth->setRange(1, 10);
     // 线性
-    ui->cboPenStyle->addItem("Solid", static_cast<int>(Qt::SolidLine));
-    ui->cboPenStyle->addItem("DashLine", static_cast<int>(Qt::DashLine));
+    ui->cboPenStyle->addItem("Solid 实线", static_cast<int>(Qt::SolidLine));
+    ui->cboPenStyle->addItem("DashLine 虚线", static_cast<int>(Qt::DashLine));
     ui->cboPenStyle->addItem("DotLine", static_cast<int>(Qt::DotLine));
     ui->cboPenStyle->addItem("DashDotLine", static_cast<int>(Qt::DashDotLine));
     ui->cboPenStyle->addItem("DashDotDotLine", static_cast<int>(Qt::DashDotDotLine));

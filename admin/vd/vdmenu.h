@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QVector>
 #include <QVBoxLayout>
+#include <QPropertyAnimation>
 #include "vd/vdmenudata.h"
 #include "vd/vdmenuitem.h"
 

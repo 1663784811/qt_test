@@ -29,19 +29,26 @@ void VdMenu::updateData(QVector<VdMenuData> *data, QVBoxLayout* loayout)
         for(int i = 0; i < data->count(); i++){
             VdMenuData objData = data->at(i);
             VdMenuItem* item = new VdMenuItem(&objData);
+
             loayout->addWidget(item);
             connect(item, &VdMenuItem::selectItem, this , [=](QString id){
                 qDebug() << " id= " << id;
             });
             if(objData.childs.count() > 0){
+
                 QVBoxLayout* vbox = new QVBoxLayout();
                 vbox->setContentsMargins(0, 0, 0, 0);
                 vbox->setSpacing(0);
-                QWidget* wg = new QWidget(this);
+                QWidget* wg = new QWidget();
                 this->updateData(&objData.childs,vbox);
                 wg->setLayout(vbox);
                 loayout->addWidget(wg);
+                // 初始化动画
+                QPropertyAnimation *animation = new QPropertyAnimation(wg, "maximumHeight");
+                animation->setDuration(300);
             }
+
+
         }
     }
 }
