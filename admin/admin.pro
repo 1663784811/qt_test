@@ -13,6 +13,7 @@ SOURCES += \
     main.cpp \
     vd/vdmenu.cpp \
     vd/vdmenuitem.cpp \
+    vd/vdswitch.cpp \
     widget.cpp \
     widget/basewidget.cpp \
     widget/testbtnwidget.cpp
@@ -21,6 +22,7 @@ HEADERS += \
     vd/vdmenu.h \
     vd/vdmenudata.h \
     vd/vdmenuitem.h \
+    vd/vdswitch.h \
     widget.h \
     widget/basewidget.h \
     widget/testbtnwidget.h
@@ -34,4 +36,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    vd/resource/vd_resource.qrc
+    vd/resource/vd_resource.qrc \
+    widget/resources.qrc

@@ -2,7 +2,15 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QSpacerItem>
+
 #include "widget/testbtnwidget.h"
+#include "ui_widget.h"
+#include "vd/vdmenu.h"
+
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,9 +33,12 @@ private:
     Ui::mainWin *ui;
     TestBtnWidget* btnWidget;
 
+    QVector<VdMenuData> *menuData;
 
     QMap<QString, QWidget*> widgetList;
     QMap<QString, int> widgetIndex;
+
+
 
 
 };

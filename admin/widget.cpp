@@ -1,10 +1,5 @@
 #include "widget.h"
-#include "ui_widget.h"
-#include <QVBoxLayout>
-#include <QPushButton>
-#include <QSpacerItem>
-#include <vd/vdmenu.h>
-#include "widget/testbtnwidget.h"
+
 
 
 Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
@@ -12,7 +7,34 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
     ui->setupUi(this);
 
     VdMenu *menu = new VdMenu();
-    QVector<VdMenuData> *data = new QVector<VdMenuData>();
+    menuData = new QVector<VdMenuData>();
+    VdMenuData component;
+    component.id = "component";
+    component.icon = ":/vd/vd_component.svg";
+    component.name = "组件";
+    QVector<VdMenuData> chd;
+
+    VdMenuData text;
+    text.id = "text";
+    text.icon = ":/vd/vd_component.svg";
+    text.name = "文本";
+    chd.append(text);
+
+    VdMenuData btnComponent;
+    btnComponent.id = "btn";
+    btnComponent.icon = ":/vd/vd_component.svg";
+    btnComponent.name = "按钮";
+    chd.append(btnComponent);
+
+    VdMenuData switchBtn;
+    switchBtn.id = "switchBtn";
+    switchBtn.icon = ":/vd/vd_component.svg";
+    switchBtn.name = "开关";
+    chd.append(switchBtn);
+
+    component.childs = chd;
+    menuData->append(component);
+
     for (int i = 0; i < 5; ++i) {
         VdMenuData v;
         v.id = "ssss";
@@ -28,10 +50,9 @@ Widget::Widget(QWidget *parent) : QWidget(parent) , ui(new Ui::mainWin)
             }
             v.childs = childs;
         }
-        data->append(v);
+        menuData->append(v);
     }
-    menu->setData(data);
-    menu->setData(data);
+    menu->setData(menuData);
     ui->leftscroll->setWidget(menu);
 
     // 接收信号
