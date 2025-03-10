@@ -13,18 +13,19 @@ VdMenuItem::VdMenuItem(VdMenuData* menuData, QWidget *parent) : QWidget{parent}
     wt->setObjectName("vdMenuItem");
     vbox->addWidget(wt);
     QHBoxLayout* qh = new QHBoxLayout();
+    qh->setContentsMargins(14, 14, 14, 14);
     wt->setLayout(qh);
     // icon
     QLabel* icon = new QLabel();
     icon->setScaledContents(true);
-    icon->setMaximumHeight(16);
-    icon->setMaximumWidth(16);
+    icon->setMaximumHeight(18);
+    icon->setMaximumWidth(18);
     if(!menuData->icon.isEmpty()){
         icon->setPixmap(QPixmap(menuData->icon));
     }
     qh->addWidget(icon);
     // name
-    QLabel* name = new QLabel(menuData->name, wt);
+    QLabel* name = new QLabel(menuData->name);
     qh->addWidget(name);
     // ====
     QSpacerItem* horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);

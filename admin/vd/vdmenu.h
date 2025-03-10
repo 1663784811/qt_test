@@ -5,8 +5,13 @@
 #include <QVector>
 #include <QVBoxLayout>
 #include <QPropertyAnimation>
+#include <QPushButton>
+#include <QHBoxLayout>
+#include <QLabel>
 #include "vd/vdmenudata.h"
 #include "vd/vdmenuitem.h"
+#include "vd/data/vdmenutree.h"
+
 
 class VdMenu : public QWidget
 {
@@ -17,21 +22,24 @@ public:
     void setData(QVector<VdMenuData>* data );
 
 private:
-    void updateData(QVector<VdMenuData> *data, QVBoxLayout* loayout); // 更新数据
-
     QVBoxLayout* vbMenuLayout;
     QSpacerItem* vbLastItem;
 
-    QMap<QString, VdMenuItem> aa; // item
-    QMap<QString, int> animation; // 动画
     QString action; // 选中
 
 
-
-
+    QMap<QString,VdMenuTree> root;
+    QPropertyAnimation *animation;
+      bool expanded = false;
 signals:
     void selectItem();
 
+
+
+
+
+private:
+    void updateData(QVector<VdMenuData> *data, QVBoxLayout* loayout, int level =0, VdMenuTree *prt = nullptr); // 更新数据
 
 
 

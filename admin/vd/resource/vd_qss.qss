@@ -2,14 +2,35 @@ QWidget {
 
 }
 
+/*=========  菜单  ===========*/
 #vdMenuItem{
-    background-color: #ffffff;
-
+    background-color: #272835;
 }
-#vdMenuItem:hover {
-    background-color: yellow;
+#vdMenuItem QLabel{
+    color: #b7b7ba;
+    font-size: 14px;
 }
 
-#aaa{
-    background-color: #222222;
+#vdMenuItem:hover{
+    background-color: #191a23
+}
+
+
+
+
+
+
+
+
+
+/*=========  菜单  ===========*/
+#mainWin{
+    background-color: #f5f7f9
+}
+#leftscroll{
+    border: none
+}
+
+VdMenu{
+    background-color: #191a23
 }

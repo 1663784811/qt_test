@@ -11,7 +11,6 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    vd/data/vddatatree.cpp \
     vd/vdmenu.cpp \
     vd/vdmenuitem.cpp \
     vd/vdswitch.cpp \
@@ -20,7 +19,7 @@ SOURCES += \
     widget/testbtnwidget.cpp
 
 HEADERS += \
-    vd/data/vddatatree.h \
+    vd/data/vdmenutree.h \
     vd/vdmenu.h \
     vd/vdmenudata.h \
     vd/vdmenuitem.h \

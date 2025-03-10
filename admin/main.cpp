@@ -10,7 +10,9 @@ int main(int argc, char *argv[])
     if (file.open(QFile::ReadOnly)) {
         QString styleSheet = QLatin1String(file.readAll());
         qApp->setStyleSheet(styleSheet);
+        file.close();
     }
+
     Widget w;
     w.show();
     return a.exec();
